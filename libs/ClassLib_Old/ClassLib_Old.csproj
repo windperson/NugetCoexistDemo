@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <NoWarn>NU1903</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <PackageId>ClassLib_Old</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>demo_coexist_nuget_name</Authors>
+        <Company>your_company</Company>
+        <PackageOutputPath>..\nupkgs</PackageOutputPath>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="NuGet.Build.Tasks.Pack" Version="6.13.1" PrivateAssets="all"/>
+        <!-- deliberately restrict to use json.net v12.x -->
+        <PackageReference Include="Newtonsoft.Json" Version="[12.*,13.0)"/>
+    </ItemGroup>
+
+</Project>

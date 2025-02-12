@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/NugetCoexistDemo.sln",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build nupkg(s)",
+            "dependsOn": [
+                "build 'old' version nupkg",
+                "build 'new' version nupkg"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build 'old' version nupkg",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/libs/ClassLib_Old/ClassLib_Old.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build 'new' version nupkg",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/libs/ClassLibrary_New/ClassLibrary_New.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

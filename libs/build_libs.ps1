@@ -1,0 +1,1 @@
+Get-ChildItem .\ClassLib*\*.csproj | ForEach-Object { dotnet build $_.FullName }
