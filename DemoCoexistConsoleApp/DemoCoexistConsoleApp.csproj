@@ -12,7 +12,7 @@
     <ItemGroup>
         <PackageReference Include="ClassLib_Old" Version="1.0.0"/>
         <PackageReference Include="ClassLibrary_New" Version="1.0.0"/>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" IncludeAssets="none"/>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" ExcludeAssets="all"/>
     </ItemGroup>
 
     <Target Name="AddCustomAliases" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
